@@ -7,13 +7,13 @@ class Side extends Component {
         
         let {id} = this.props.info;
         let {name} = this.props.info;
-        let {qtt} = this.props.info;
+        let {qtt} = this.props;
      
         return (
             <div className="chartitem">
                 <div><img className="artimgmin"  src={require('../imgs/'+id+'.png').default} alt=""/></div>
                 <div className="prodname"> {name} </div>
-                <div className="qtt"> {this.props.qtt} </div>
+                <div className="qtt"> {qtt} </div>
                 <div><img className="delimg"  id={id} src={del} alt=""/></div>
             </div>
         );

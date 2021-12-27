@@ -12,10 +12,10 @@ class Article extends Component {
             <div className="article">
                 
             <img className="artimg" src={require('../imgs/'+id+'.png').default} alt=""/>
-            <img className="plusimg" id={id} onClick={this.props.plusClick} src={plusimg} alt=""/>
+            <img className="plusimg" id={id} onClick={(e)=>this.props.plusClick(e)} src={plusimg} alt=""/>
             <div className="info">
                 <div>
-                    {name} : {price} DH 
+                    {name} : {price}DH 
                 </div>
                 <button className="detailsBtn">Detail</button>
             </div>

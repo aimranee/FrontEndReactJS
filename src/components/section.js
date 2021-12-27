@@ -8,7 +8,7 @@ class Section extends Component {
         products:products,
         total : 0,
         id : 0,
-        qtt : 0
+        qtt : 0,
     };
 
     setPlusClick = (e) => {
@@ -17,38 +17,36 @@ class Section extends Component {
             id:e.target.id-1,
             total:newTotal
         });
-        
-        if (e.target.id == this.state.id+1){
-            let newQtt = this.state.qtt+1;
-            console.log(newQtt);
-            this.setState({
-                qtt:newQtt
-            });
+        let newQtt=0
+        if (e.target.id == (this.state.id+1)){
+            newQtt = this.state.qtt+1;
+        }else{
+            newQtt = 1;
         }
+        this.setState({
+            qtt:newQtt
+        });
 
     };
 
     render() { 
         let articles = products.map(e=><Article key={e.id} info={e} plusClick={this.setPlusClick} />);
-        
-        let side = <Side info={products[this.state.id]} key={this.state.id} qtt={this.state.qtt}/>;
+        let side ;
+        side = <Side info={products[this.state.id]} key={this.state.id+1} qtt={this.state.qtt}/>;
         
         return (
             <section>
-            <article>
-                {articles}
-            </article>
-            <aside>
-                
-                <div id="search">
-                    <input type="text" placeholder="chercher un produit ..."/>
-                </div>
-                <div id="total" className="title">Total: {this.state.total}DH</div>
-                <div className="panier" id="panier">
-
-                    {side}
-                </div>
-            </aside>
+                <article>
+                    {articles}
+                </article>
+                <aside>
+                    
+                    <div id="search">
+                        <input type="text" placeholder="chercher un produit ..."/>
+                    </div>
+                    <div id="total" className="title">Total: {this.state.total}DH</div>
+                        {side}
+                </aside>
             </section>
         );
     }
