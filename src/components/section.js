@@ -61,7 +61,7 @@ setPlusClick = (id) => {
     }
 
     render() { 
-        let articles = this.state.products.map(e=><Article key={e.id} info={e} plusClick={this.setPlusClick} />);
+        let articles = this.state.products.map(e=><Article key={e.id} pagehandle={this.props.pagehandle} info={e} plusClick={this.setPlusClick} />);
 
         let side = null;
         // console.log(this.state.products);

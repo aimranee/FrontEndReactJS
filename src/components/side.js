@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import del from '../imgs/del.png'
 
 class Side extends Component {
-
     render() { 
         
         let {id} = this.props.info;
