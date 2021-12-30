@@ -9,7 +9,6 @@ class Section extends Component {
         total : 0,
         id : 0,
         data:[]
-        // qtt : products.qtt
         
     };
 
@@ -56,12 +55,11 @@ setPlusClick = (id) => {
             data:rows,
             total:total
         })
-                
 
     }
 
     render() { 
-        let articles = this.state.products.map(e=><Article key={e.id} pagehandle={this.props.pagehandle} info={e} plusClick={this.setPlusClick} />);
+        let articles = this.state.products.map(e=><Article name="details" key={e.id} pagehandle={this.props.pagehandle} info={e} plusClick={this.setPlusClick} />);
 
         let side = null;
         // console.log(this.state.products);
@@ -88,4 +86,3 @@ setPlusClick = (id) => {
 }
  
 export default Section;
-        // let side = this.state.products.map(e=><Side info={e} key={e.id} qtt={this.state.qtt}/>);

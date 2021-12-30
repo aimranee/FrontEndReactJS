@@ -10,7 +10,8 @@ class App extends Component {
     id:0
   }
 
-  pagehandle = (e, id)=>{
+  setPageHandle=(e,id)=>{
+    console.log("it'ok here");
     if(e.target.name==="home")
       this.setState({page:"home"})
     else{
